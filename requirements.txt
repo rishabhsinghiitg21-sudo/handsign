@@ -1,0 +1,10 @@
+# Direct dependencies, pinned to the versions handsign was built and tested with.
+mediapipe==0.10.35
+opencv-python==4.13.0.92
+opencv-contrib-python==4.13.0.92   # pulled in by mediapipe; keep it in step with opencv-python
+pynput==1.8.2
+numpy==2.4.6
+faster-whisper==1.2.1
+sounddevice==0.5.5
+fastapi==0.136.3
+uvicorn[standard]==0.48.0

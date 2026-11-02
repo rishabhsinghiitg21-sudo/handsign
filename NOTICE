@@ -1,0 +1,40 @@
+handsign is shared to show the work. All rights reserved.
+This notice covers third-party software and models that handsign uses.
+They are not part of handsign's own code, and they keep their own licences.
+None of them is included in this repository: setup.sh installs or downloads them.
+
+Models (downloaded by scripts/download_models.sh)
+  MediaPipe Hand Landmarker and Face Landmarker model bundles
+    Google LLC, Apache License 2.0
+    https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker
+    https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker
+  Whisper "base.en" speech model, in CTranslate2 format
+    OpenAI (Whisper), converted by Systran, MIT License
+    Downloaded by faster-whisper on first use of voice.
+
+Python libraries (installed from requirements.txt)
+  mediapipe            Google LLC, Apache-2.0
+  faster-whisper       SYSTRAN, MIT (runs on CTranslate2, MIT)
+  opencv-python        OpenCV contributors, Apache-2.0
+  numpy                NumPy developers, BSD-3-Clause
+  pynput               Moses Palmér, LGPL-3.0 (installed as a dependency, not bundled or modified)
+  sounddevice          Matthias Geier, MIT
+  fastapi              Sebastián Ramírez, MIT
+  uvicorn              Encode, BSD-3-Clause
+
+Web console (installed by npm ci from web/package-lock.json)
+  react, react-dom     Meta Platforms, MIT
+  vite, @vitejs/plugin-react   Vite contributors, MIT
+  vitest               Vitest contributors, MIT (tests only)
+  tailwindcss, postcss, autoprefixer   MIT
+  lucide-react         Lucide contributors, ISC
+  typescript           Microsoft, Apache-2.0
+  Fonts: Oxanium and JetBrains Mono, SIL Open Font License 1.1,
+         loaded from Google Fonts at runtime.
+
+Inspiration
+  Hand-seal sequences in examples/naruto.json are inspired by Naruto
+  (Masashi Kishimoto). handsign is not affiliated with or endorsed by its creators.
+
+Licence details above are summarised from each project's own published licence.
+Check the projects themselves for the authoritative text.

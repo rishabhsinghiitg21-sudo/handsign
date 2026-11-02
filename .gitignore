@@ -1,0 +1,20 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Web console
+web/node_modules/
+web/dist/
+*.tsbuildinfo
+web/vite.config.js
+web/vite.config.d.ts
+
+# Models (fetched by scripts/download_models.sh)
+data/*.task
+
+# Your own recordings
+data/dataset.json
+
+# macOS
+.DS_Store

@@ -1,0 +1,241 @@
+{
+  "_comment": "Default map. Uses only the seven built-in poses (fist, open_palm, thumbs_up, point, peace, three, shaka), so it works without recording anything. A pose used for mouse/scroll/push-to-talk is handled by that role and should not also be in 'poses'. Action types: key | text | shell | mouse | workflow. WARNING: 'shell' actions run commands on your Mac.",
+  "poses": {
+    "thumbs_up": {
+      "action": {
+        "type": "text",
+        "value": "yes"
+      }
+    },
+    "shaka": {
+      "action": {
+        "type": "key",
+        "value": "esc"
+      }
+    }
+  },
+  "sequences": {
+    "peace_out": {
+      "steps": [
+        "open_palm",
+        "peace",
+        "fist"
+      ],
+      "action": {
+        "type": "shell",
+        "value": "osascript -e 'display notification \"Peace out\" with title \"handsign\"'"
+      }
+    }
+  },
+  "push_to_talk": {
+    "fist": {
+      "mode": "command"
+    },
+    "open_palm": {
+      "mode": "dictation"
+    }
+  },
+  "voice_commands": {
+    "send": {
+      "action": {
+        "type": "key",
+        "value": "cmd+enter"
+      }
+    },
+    "enter": {
+      "action": {
+        "type": "key",
+        "value": "enter"
+      }
+    },
+    "new line": {
+      "action": {
+        "type": "key",
+        "value": "enter"
+      }
+    },
+    "escape": {
+      "action": {
+        "type": "key",
+        "value": "esc"
+      }
+    },
+    "undo": {
+      "action": {
+        "type": "key",
+        "value": "cmd+z"
+      }
+    },
+    "redo": {
+      "action": {
+        "type": "key",
+        "value": "cmd+shift+z"
+      }
+    },
+    "select all": {
+      "action": {
+        "type": "key",
+        "value": "cmd+a"
+      }
+    },
+    "copy": {
+      "action": {
+        "type": "key",
+        "value": "cmd+c"
+      }
+    },
+    "paste": {
+      "action": {
+        "type": "key",
+        "value": "cmd+v"
+      }
+    },
+    "save": {
+      "action": {
+        "type": "key",
+        "value": "cmd+s"
+      }
+    },
+    "switch app": {
+      "action": {
+        "type": "key",
+        "value": "cmd+tab"
+      }
+    },
+    "spotlight": {
+      "action": {
+        "type": "key",
+        "value": "cmd+space"
+      }
+    },
+    "open terminal": {
+      "action": {
+        "type": "shell",
+        "value": "open -a Terminal"
+      }
+    }
+  },
+  "expressions": {
+    "brows_up": {
+      "action": {
+        "type": "key",
+        "value": "up"
+      }
+    },
+    "mouth_open": {
+      "action": {
+        "type": "key",
+        "value": "space"
+      }
+    }
+  },
+  "combined": [
+    {
+      "gesture": "point",
+      "phrase": "click",
+      "action": {
+        "type": "mouse",
+        "value": "click"
+      }
+    },
+    {
+      "gesture": "point",
+      "phrase": "right click",
+      "action": {
+        "type": "mouse",
+        "value": "right_click"
+      }
+    },
+    {
+      "gesture": "thumbs_up",
+      "expression": "smile",
+      "action": {
+        "type": "text",
+        "value": "approved!"
+      }
+    },
+    {
+      "hands": [
+        "fist",
+        "fist"
+      ],
+      "action": {
+        "type": "shell",
+        "value": "osascript -e 'display notification \"Both fists!\" with title \"handsign\"'"
+      }
+    },
+    {
+      "hands": [
+        "fist",
+        "open_palm"
+      ],
+      "action": {
+        "type": "key",
+        "value": "cmd+z"
+      }
+    }
+  ],
+  "workflows": {
+    "focus_and_greet": {
+      "steps": [
+        {
+          "action": {
+            "type": "shell",
+            "value": "open -a Notes"
+          },
+          "delay_ms": 600
+        },
+        {
+          "action": {
+            "type": "text",
+            "value": "Hello from handsign"
+          }
+        },
+        {
+          "action": {
+            "type": "key",
+            "value": "enter"
+          }
+        }
+      ]
+    },
+    "screenshot": {
+      "steps": [
+        {
+          "action": {
+            "type": "key",
+            "value": "cmd+shift+4"
+          }
+        }
+      ]
+    }
+  },
+  "settings": {
+    "stable_frames": 8,
+    "min_confidence": 0.7,
+    "max_distance": 0.55,
+    "cooldown": 1.0,
+    "sequence_timeout": 3.0,
+    "camera_index": 0,
+    "max_hands": 2,
+    "voice": {
+      "model": "base.en",
+      "device": "auto",
+      "compute_type": "int8",
+      "always_listen": false,
+      "energy_threshold": 0.012,
+      "silence_ms": 600,
+      "max_segment_s": 12,
+      "min_segment_ms": 250
+    },
+    "mouse": {
+      "enabled": true,
+      "gesture": "point",
+      "scroll_gesture": "three",
+      "smoothing": 0.5,
+      "pinch_threshold": 0.6,
+      "margin": 0.15,
+      "scroll_speed": 60
+    }
+  }
+}
